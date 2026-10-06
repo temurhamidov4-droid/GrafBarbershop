@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
+
   <title>GRAF Barbershop</title>
 
   <style>
@@ -18,9 +19,11 @@
       background: #000000;
       color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       padding: 25px 16px;
     }
 
@@ -30,31 +33,31 @@
       text-align: center;
     }
 
+    /* ЛОГОТИП */
     .logo {
-      width: 105px;
-      height: 105px;
+      width: 125px;
+      height: 125px;
+
       margin: 0 auto 22px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #FFAA00, #FF4E00);
+
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow:
-        0 0 25px rgba(255, 85, 0, 0.35),
-        0 0 60px rgba(255, 170, 0, 0.12);
     }
 
-    .logo span {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: #000000;
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
+    /* НАЗВАНИЕ */
     h1 {
-      font-size: 30px;
+      font-size: 29px;
       font-weight: 900;
       letter-spacing: 5px;
+
       margin-bottom: 8px;
     }
 
@@ -63,9 +66,27 @@
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 30px;
+
+      margin-bottom: 28px;
     }
 
+    /* ГРАДИЕНТНАЯ ЛИНИЯ */
+    .gradient-line {
+      width: 80px;
+      height: 2px;
+
+      margin: 0 auto 20px;
+
+      background: linear-gradient(
+        90deg,
+        #FF4E00,
+        #FFAA00
+      );
+
+      border-radius: 10px;
+    }
+
+    /* КНОПКИ */
     .buttons {
       display: flex;
       flex-direction: column;
@@ -74,34 +95,47 @@
 
     .button {
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       min-height: 58px;
       padding: 16px 20px;
+
       border-radius: 14px;
+
       text-decoration: none;
       color: #ffffff;
+
       font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.5px;
+
       background: #111111;
+
       border: 1px solid rgba(255, 130, 0, 0.45);
-      transition: 0.2s ease;
+
+      transition: all 0.2s ease;
+
       overflow: hidden;
     }
 
     .button::before {
       content: "";
+
       position: absolute;
       inset: 0;
+
       background: linear-gradient(
         90deg,
         rgba(255, 78, 0, 0.10),
         rgba(255, 170, 0, 0.08)
       );
+
       opacity: 0;
-      transition: 0.2s ease;
+
+      transition: opacity 0.2s ease;
     }
 
     .button:hover::before {
@@ -110,8 +144,11 @@
 
     .button:hover {
       transform: translateY(-2px);
+
       border-color: #FF8500;
-      box-shadow: 0 7px 25px rgba(255, 85, 0, 0.18);
+
+      box-shadow:
+        0 7px 25px rgba(255, 85, 0, 0.18);
     }
 
     .button:active {
@@ -121,40 +158,55 @@
     .icon {
       position: absolute;
       left: 20px;
+
       font-size: 20px;
     }
 
+    /* КНОПКА ТЕЛЕФОНА */
     .phone {
-      background: linear-gradient(90deg, #FF4E00, #FFAA00);
+      background: linear-gradient(
+        90deg,
+        #FF4E00,
+        #FFAA00
+      );
+
       color: #000000;
+
       border: none;
-      box-shadow: 0 8px 30px rgba(255, 85, 0, 0.25);
+
+      box-shadow:
+        0 8px 30px rgba(255, 85, 0, 0.25);
     }
 
     .phone:hover {
       border: none;
-      box-shadow: 0 10px 35px rgba(255, 85, 0, 0.35);
+
+      box-shadow:
+        0 10px 35px rgba(255, 85, 0, 0.35);
     }
 
+    /* НИЗ */
     .footer {
       margin-top: 28px;
+
       color: #666666;
+
       font-size: 11px;
       letter-spacing: 1.5px;
+
       text-transform: uppercase;
     }
 
-    .gradient-line {
-      width: 80px;
-      height: 2px;
-      margin: 0 auto 20px;
-      background: linear-gradient(90deg, #FF4E00, #FFAA00);
-      border-radius: 10px;
-    }
-
+    /* ТЕЛЕФОН */
     @media (max-width: 380px) {
+
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+
       h1 {
-        font-size: 26px;
+        font-size: 25px;
       }
 
       .button {
@@ -168,41 +220,72 @@
 
   <main class="container">
 
+    <!-- ЛОГОТИП -->
     <div class="logo">
-      <span>GRAF</span>
+      <img src="logo.png" alt="GRAF Barbershop">
     </div>
 
+    <!-- НАЗВАНИЕ -->
     <h1>GRAF BARBERSHOP</h1>
 
     <div class="subtitle">
-      Darxon
+      DARXON
     </div>
 
     <div class="gradient-line"></div>
 
+    <!-- КНОПКИ -->
     <div class="buttons">
 
-      <a class="button phone" href="tel:+998700189911">
+      <!-- ТЕЛЕФОН -->
+      <a
+        class="button phone"
+        href="tel:+998700189911"
+      >
         <span class="icon">☎</span>
         Позвонить
       </a>
 
-      <a class="button" href="https://www.instagram.com/graf_barbershop/" target="_blank">
+      <!-- INSTAGRAM -->
+      <a
+        class="button"
+        href="https://www.instagram.com/graf_barbershop/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <span class="icon">◎</span>
         Instagram
       </a>
 
-      <a class="button" href="https://t.me/grafbarbershopdarxon" target="_blank">
+      <!-- TELEGRAM -->
+      <a
+        class="button"
+        href="https://t.me/grafbarbershopdarxon"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <span class="icon">➤</span>
         Telegram
       </a>
 
-      <a class="button" href="https://yandex.uz/maps/-/CXeCvQJS" target="_blank">
+      <!-- YANDEX -->
+      <a
+        class="button"
+        href="https://yandex.uz/maps/-/CXeCvQJS"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <span class="icon">★</span>
         Яндекс Карты
       </a>
 
-      <a class="button" href="https://maps.app.goo.gl/2faUqY1tj2U1N2Zc7" target="_blank">
+      <!-- GOOGLE -->
+      <a
+        class="button"
+        href="https://maps.app.goo.gl/2faUqY1tj2U1N2Zc7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <span class="icon">⌖</span>
         Google Maps
       </a>
